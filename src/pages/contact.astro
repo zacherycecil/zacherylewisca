@@ -1,0 +1,68 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+
+import { Image } from "astro:assets"
+import myImage from "../../public/IMG_4951.jpg"
+---
+
+<Layout title="zachery lewis. - contact">
+	<main>
+		<Header/>
+		<div class="main-area">
+			<Image id="contact-img" src={myImage} alt="Zachery Lewis"/>
+			<div class="writeup">
+				<p class="get-in-touch">Get in touch</p>
+				<p>
+					Email: <a href = "mailto: zcjl98@yahoo.ca">zcjl98@yahoo.ca</a></br>
+					LinkedIn: <a href="https://www.linkedin.com/in/zachery-cj-lewis/" target="_blank">https://www.linkedin.com/in/zachery-cj-lewis/ </a>
+				</p>
+			</div>
+		</div>
+	</main>
+</Layout>
+
+<style>
+	#contact-img {
+		width: 40vw;
+		height: auto;
+  		border-radius: 25px;
+		padding: 10px;
+	}
+	.main-area {
+		display: flex;
+		background-color: #384552;
+		border-radius: 25px;
+		flex-direction: row;
+		align-items: center;
+	}
+	.writeup {
+		width: 100%;
+	}
+	.get-in-touch {
+		margin-top: 0;
+		color: white;
+		text-decoration: none;
+		font-size: 36px;
+	}
+	p {
+		text-align: center;
+		justify-content: center;
+	}
+	a {
+		color: #FFDFF7;	
+	}
+	
+	@media screen and (max-width: 1000px) {
+
+		.main-area {
+			display: flex;
+			background-color: #384552;
+			border-radius: 25px;
+			flex-direction: column-reverse;
+			align-items: center;
+			padding-bottom:5vw;
+			padding-top:5vw;
+		}
+	}
+</style>

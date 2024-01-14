@@ -1,0 +1,179 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+
+import { Image } from "astro:assets"
+import myImage from "../../public/crop_DSC_1565.png"
+import gwImage from "/guidewire_software_logo.jfif"
+import ibmImage from "../../public/ibm.png"
+import clearviewImage from "/clearview.jfif"
+import pccertImage from "../../public/pccert.png"
+---
+
+<Layout title="zachery lewis. - about">
+	<main>
+		<Header/>
+		<div class="main-area">
+			<Image id="aboutme-intro" src={myImage} alt="Zachery Lewis"/>
+			<div class="writeup">
+				<h1>My name is Zachery Lewis and I'm a Software Engineer.</h1>
+				<p>I graduated from University of New Brunswick back in 2021 with a 3.6 GPA. During my years at UNB, I spent three semesters at IBM Canada and one at Clearview Restaurant Management Software, which earned me a Co-operative Education Designation on my transcript. After graduating, I started as a Technical Support Engineer at Guidewire Inc. Since then, I've transitioned to a Platform Support Engineer. </p>
+			</div>
+		</div>
+		<div class="work-experience">
+			<h1>Work Experience</h1>
+			<div class="workplace">
+				<Image class="workplace-img" src={gwImage} alt="Guidewire Inc." width={200} height={200}></Image>
+				<div class="workspace-writeup">
+					<h2>Guidewire Inc.</h2>
+					<h3>Platform Support Engineer <i>June 2021 - Present</i></h3>
+					<h3>Mississauga, ON, Canada [remote]</h3>
+					<p>
+						I've been at Guidewire for over two years now. I've spent a lot of time working with customers, keeping frequent communication and documenting solutions.
+						I've worked in high stress scenarios, joining the escalation team during on-call shifts to perform platform-related tasks. It's important to ensure the customer makes a swift recovery during an outage.
+						I have a certification for the Guidewire InsuranceSuite product, PolicyCenter. I work with Guidewire's proprietary coding and scripting language, Gosu to suggest solutions for customers with custom PolicyCenter configurations.
+						I am a KCS Publisher, I've written and published knowledge articles concerning case remediation and best practices for standard procedures.
+					</p>
+				</div>
+			</div>
+			<div class="workplace">
+				<Image class="workplace-img" src={ibmImage} alt="Guidewire Inc." width={200} height={200}></Image>
+				<div class="workspace-writeup">
+					<h2>IBM Canada</h2>
+					<h3>QA/Automation Co-op Student <i>September 2018 - December 2018 & May 2019 - December 2019</i></h3>
+					<h3>Fredericton, NB, Canada</h3>
+					<p>
+						At IBM Canada, I did QA and automation testing on IBM's enterprise security product, QRadar. I practiced clean coding techniques and attention to detail to replace their Java Selenium automation. The new automation used Spock testing framework and Apache Groovy language.
+					</p>
+				</div>
+			</div>
+			<div class="workplace">
+				<Image class="workplace-img" src={clearviewImage} alt="Guidewire Inc." width={200} height={200}></Image>
+				<div class="workspace-writeup">
+					<h2>Clearview Restaurant Management Software</h2>
+					<h3>QA Co-op Student <i>January 2018 - April 2018</i></h3>
+					<h3>Fredericton, NB, Canada</h3>
+					<p>
+						During my time at Clearview (the company was called Quick Service Software at the time), I implemented clean coding techniques to write automation tests in Java Selenium, while also writing and executing test plans for manual testing. 
+						This work required out-of-the-box thinking and keen attention to detail to pick up on software errors that may have been missed by the developers.
+					</p>
+				</div>
+			</div>
+		</div>
+		<div class="work-experience">
+			<h1>Certifications</h1>
+			<div class="workplace">
+				<Image class="workplace-img" src={pccertImage} alt="Guidewire Inc." width={200} height={226}></Image>
+				<div class="workspace-writeup">
+					<h2>PolicyCenter Certified</h2>
+					<h3>Professional Configuration Support</h3>
+				</div>
+			</div>
+				
+		</div>
+	</main>
+</Layout>
+
+<style>
+	.workplace-img {
+		margin-right: 66px;
+		border-radius: 25px;
+		margin-bottom: auto;
+		height: inherit;
+	}
+	i {
+		margin-left: 10px;
+	}
+	.workplace-writeup {
+		display: flex;
+		flex-direction: column;
+	}
+	#aboutme-intro {
+		width: 40vw;
+		height: auto;
+  		border-radius: 25px;
+		padding: 10px;
+	}
+	.main-area {
+		display: flex;
+		background-color: #384552;
+		border-radius: 25px;
+		flex-direction: row;
+		margin-bottom: 5vw;
+		align-items: center;
+	}
+	.writeup {
+		padding: 10vw;
+	}
+	.work-experience {
+		background-color: #384552;
+		border-radius: 25px;
+		display: flex;
+		align-items: center;
+		flex-direction: column;
+		margin-bottom: 5vw;
+		padding-top: 66px;
+	}
+	.workplace {
+		width: 60vw;
+		padding-bottom: 66px;
+		flex-direction: row;
+		display: flex;
+	}
+	h1 {
+		color: #FFDFF7;
+		text-decoration: none;
+		font-size: 36px;
+		font-weight: 400;
+		margin-top: 0px;
+	}
+	h2, h3 {
+		color: #FFDFF7;
+		font-weight: 400;
+		margin: 0px;
+	}
+	
+	@media screen and (max-width: 1000px) {
+		p, h3{
+			font-size: 16px;
+		}
+		h2 {
+			font-size: 20px;
+		}
+		.workplace {
+			width: 80vw;
+			padding-bottom: 66px;
+			flex-direction: column;
+			display: flex;
+			align-items:center;
+		}
+		.workplace-img {
+			margin-right: 0px;
+			border-radius: 25px;
+			margin-bottom: 66px;
+
+		}
+		.workplace-writeup {
+			display: flex;
+			flex-direction: column;
+		}
+		#aboutme-intro {
+			width: 86vw;
+			height: auto;
+			border-radius: 25px;
+			margin-bottom: 1vw;
+		}
+		.writeup {
+			padding: 3vw;
+		}
+		.main-area {
+			display: flex;
+			background-color: #384552;
+			border-radius: 25px;
+			flex-direction: row;
+			margin-bottom: 5vw;
+			align-items: center;
+			flex-direction: column-reverse;
+		}
+	}
+</style>

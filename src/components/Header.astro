@@ -1,0 +1,72 @@
+---
+//import Navigation from './Navigation.astro';
+---
+<header> 
+    <div class="outer-box">
+        <div class="header-pages">
+            <a href="/aboutme">About</a>
+            <a href="/contact">Contact</a>
+        </div>
+        <a href="/"><img src="/IMG_0263.png" alt="Metal Logo"></a>
+        <div class="header-links">
+            <a href="https://www.instagram.com/im_zachey/" class="fa fa-instagram" target=”_blank”></a>
+            <a href="https://github.com/zacherycecil"class="fa fa-github" target=”_blank”></a>
+            <a href="https://www.last.fm/user/alienwaters" class="fa-brands fa-lastfm" target=”_blank”></i></a>
+            <a href="https://www.linkedin.com/in/zachery-cj-lewis/" class="fa-brands fa-linkedin-in" target=”_blank”></i></a>
+        </div>
+    </div>
+</header>
+<style>
+    header {
+        overflow: hidden;
+        padding-bottom: 5%;
+    }
+    img {
+        width: 400px;
+        padding-top: 8px;
+        max-width: 50vw;
+        height: auto;
+    }
+    .main-word {
+		display: flex;
+		color: #FFDFF7;
+		text-decoration: none;
+		font-size: 36px;
+        float: left;
+        justify-content: space-around;
+        flex: 1 1 0;
+    }
+    .header-links {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
+		align-items: center;
+        flex: 1 1 0;
+    }
+    .outer-box {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+    }
+    #projects {
+        color: lightgray;
+    }
+    .header-links a {
+		color: #FFDFF7;
+		text-decoration: none;
+		font-size: 24px;
+        padding: 8px;
+    }
+    .header-pages {
+        display: flex;
+        flex-direction: row;
+		align-items: center;
+        flex: 1 1 0;
+    }
+    .header-pages a {
+		color: #FFDFF7;
+		text-decoration: none;
+		font-size: 24px;
+        padding: 8px;
+    }
+</style>

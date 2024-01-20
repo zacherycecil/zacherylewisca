@@ -1,0 +1,3 @@
+My name is Zachery Lewis and I'm a Software Engineer.
+
+I graduated from University of New Brunswick back in 2021 with a 3.6 GPA. The same year, I started as a Technical Support Engineer at Guidewire Inc. Since then, I've transitioned to a Platform Support Engineer. I've spent a lot of time working with customers, keeping frequent communication and documenting solutions. I've worked in high stress scenarios, joining the escalation team to perform platform-related tasks to ensure the customer makes a swift recovery during an outage. I have a certification for the Guidewire product, PolicyCenter.

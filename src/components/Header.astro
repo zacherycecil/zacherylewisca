@@ -7,7 +7,8 @@
             <a href="/aboutme">About</a>
             <a href="/contact">Contact</a>
         </div>
-        <a href="/"><img src="/IMG_0263.png" alt="Metal Logo"></a>
+        <!--a href="/"><img src="/IMG_0263.png" alt="Metal Logo"></a-->
+        <a class="title" href="/">zacherylewis.ca</a>
         <div class="header-links">
             <a href="https://www.instagram.com/im_zachey/" class="fa fa-instagram" target=”_blank” rel="noreferrer"></a>
             <a href="https://github.com/zacherycecil"class="fa fa-github" target=”_blank” rel="noreferrer"></a>
@@ -17,9 +18,15 @@
     </div>
 </header>
 <style>
+    .title {
+        font-size: 40px;
+		color: #FFDFF7;
+		text-decoration: none;
+    }
     header {
         overflow: hidden;
         padding-bottom: 5%;
+        padding-top: 5%;
     }
     img {
         width: 400px;
@@ -42,6 +49,7 @@
         justify-content: flex-end;
 		align-items: center;
         flex: 1 1 0;
+        margin-top: 20px;
     }
     .outer-box {
         display: flex;
@@ -56,6 +64,7 @@
 		text-decoration: none;
 		font-size: 24px;
         padding: 8px;
+        opacity: 85%;
     }
     .header-pages {
         display: flex;
@@ -68,5 +77,11 @@
 		text-decoration: none;
 		font-size: 24px;
         padding: 8px;
+        opacity: 85%;
+    }
+	@media screen and (max-width: 1000px) {
+        header {
+            padding-top: 1%;
+        }
     }
 </style>

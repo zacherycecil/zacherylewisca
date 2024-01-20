@@ -8,6 +8,7 @@ import gwImage from "/guidewire_software_logo.jfif"
 import ibmImage from "../../public/ibm.png"
 import clearviewImage from "/clearview.jfif"
 import pccertImage from "../../public/pccert.png"
+import WorkExperience from '../components/aboutme/WorkExperience.astro';
 ---
 
 <Layout title="zachery lewis. - about">
@@ -21,48 +22,7 @@ import pccertImage from "../../public/pccert.png"
 				<p>After graduating, I started as a Technical Support Engineer at Guidewire Inc. Since then, I've transitioned to a Platform Support Engineer. Quick to learn and eager to develop my skills, I am open to trying out different roles.</p>
 			</div>
 		</div>
-		<div class="work-experience">
-			<h1>Work Experience</h1>
-			<div class="workplace">
-				<Image class="workplace-img" src={gwImage} alt="Guidewire Inc." width={200} height={200}></Image>
-				<div class="workspace-writeup">
-					<h2>Platform Support Engineer</h2>
-					<h3>Guidewire Inc.</h3>
-					<h4>June 2021 - Present</h4>
-					<p>
-						I've been at Guidewire for over two years now. I've spent a lot of time working with customers, keeping frequent communication and documenting solutions.
-						I've worked in high stress scenarios, joining the escalation team during on-call shifts to perform platform-related tasks. It's important to ensure the customer makes a swift recovery during an outage.
-					</p>
-					<p>
-						I have a certification for the Guidewire InsuranceSuite product, PolicyCenter. I work with Guidewire's proprietary coding and scripting language, Gosu to suggest solutions for customers with custom PolicyCenter configurations.
-						I am a KCS Publisher, I've written and published knowledge articles concerning case remediation and best practices for standard procedures.
-					</p>
-				</div>
-			</div>
-			<div class="workplace">
-				<Image class="workplace-img" src={ibmImage} alt="Guidewire Inc." width={200} height={200}></Image>
-				<div class="workspace-writeup">
-					<h2>QA/Automation Co-op Student</h2>
-					<h3>IBM Canada</h3>
-					<h4>September 2018 - December 2018 & May 2019 - December 2019</h4>
-					<p>
-						At IBM Canada, I did QA and automation testing on IBM's enterprise security product, QRadar. I practiced clean coding techniques and attention to detail to replace their Java Selenium automation. The new automation used Spock testing framework and Apache Groovy language.
-					</p>
-				</div>
-			</div>
-			<div class="workplace">
-				<Image class="workplace-img" src={clearviewImage} alt="Guidewire Inc." width={200} height={200}></Image>
-				<div class="workspace-writeup">
-					<h2>QA Co-op Student</h2>
-					<h3>Clearview Restaurant Management Software</h3>
-					<h4>January 2018 - April 2018</h4>
-					<p>
-						During my time at Clearview (the company was called Quick Service Software at the time), I implemented clean coding techniques to write automation tests in Java Selenium, while also writing and executing test plans for manual testing. 
-						This work required out-of-the-box thinking and keen attention to detail to pick up on software errors that may have been missed by the developers.
-					</p>
-				</div>
-			</div>
-		</div>
+		<WorkExperience/>
 		<div class="work-experience">
 			<h1>Certifications</h1>
 			<div class="workplace">
@@ -83,9 +43,6 @@ import pccertImage from "../../public/pccert.png"
 		border-radius: 25px;
 		margin-bottom: auto;
 		height: inherit;
-	}
-	i {
-		margin-left: 10px;
 	}
 	.workplace-writeup {
 		display: flex;
@@ -150,6 +107,10 @@ import pccertImage from "../../public/pccert.png"
 	@media screen and (max-width: 1000px) {
 		h3 {
 			font-size: 16px;
+			text-align: center;
+		}
+		h1 {
+			font-size: 26px;
 			text-align: center;
 		}
 		p {

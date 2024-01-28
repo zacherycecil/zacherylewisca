@@ -9,8 +9,25 @@ import myImage from "../../public/IMG_4951.jpg"
 <Layout title="zachery lewis. - contact">
 	<main>
 		<Header/>
+		<script>
+			fade(document.querySelectorAll('.main-area'));
+
+			function fade(toFade) {
+				var op = 0;  // initial opacity
+				toFade.forEach((element) => {
+					var timer = setInterval(function () {
+						if (op >= 1){
+							clearInterval(timer);
+						}
+						element.style.opacity = op;
+						element.style.filter = 'alpha(opacity=' + op * 100 + ")";
+						op += 0.01;
+					}, 10);
+				});
+			}
+		</script>
 		<div class="main-area">
-			<Image id="contact-img" src={myImage} alt="Zachery Lewis"/>
+			<Image id="contact-img" decoding="sync" src={myImage} alt="Zachery Lewis"/>
 			<div class="writeup">
 				<p class="get-in-touch">Get in touch</p>
 				<p>
@@ -36,6 +53,7 @@ import myImage from "../../public/IMG_4951.jpg"
 		flex-direction: row;
 		align-items: center;
 		margin-bottom: 5vw;
+		opacity: 0;
 	}
 	.writeup {
 		width: 100%;

@@ -1,12 +1,10 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Header from '../components/Header.astro';
-
 import { Image } from "astro:assets"
 import myImage from "../../public/crop_DSC_1565.png"
-import gwImage from "/guidewire_software_logo.jfif"
-import ibmImage from "../../public/ibm.png"
-import clearviewImage from "/clearview.jfif"
+import { ViewTransitions } from "astro:transitions";
+import "aos/dist/aos.css";
 import pccertImage from "../../public/pccert.png"
 import WorkExperience from '../components/aboutme/WorkExperience.astro';
 ---
@@ -14,16 +12,56 @@ import WorkExperience from '../components/aboutme/WorkExperience.astro';
 <Layout title="zachery lewis. - about">
 	<main>
 		<Header/>
-		<div class="main-area">
-			<Image id="aboutme-intro" src={myImage} alt="Zachery Lewis"/>
+
+		<script>
+			fade(document.querySelectorAll('.to-fade'));
+
+			function fade(toFade) {
+				var op = 0;  // initial opacity
+				toFade.forEach((element) => {
+					var timer = setInterval(function () {
+						if (op >= 1){
+							clearInterval(timer);
+						}
+						element.style.opacity = op;
+						element.style.filter = 'alpha(opacity=' + op * 100 + ")";
+						op += 0.01;
+					}, 10);
+				});
+			}
+
+			var flagWorkExp = true
+			var flagCert = true
+
+			window.addEventListener("scroll", function() {
+			if(this.scrollY > 1000) {
+				if(flagWorkExp) {
+					fade(document.querySelectorAll('.work-experience'));
+					flagWorkExp = false;
+				}
+			}
+			else if(this.scrollY > 2200) {
+				if(flagCert) {
+					fade(document.querySelectorAll('.certs'));
+					flagCert = false;
+				}
+			}
+			})
+		</script>
+
+		<div class="main-area to-fade">
+			<Image decoding="sync" class="aboutme-img" src={myImage} alt="Zachery Lewis"/>
 			<div class="writeup">
 				<h1>My name is Zachery Lewis and I'm a Software Engineer.</h1>
 				<p>I completed my Bachelor of Science in Software Engineering at University of New Brunswick in 2021. During my years at UNB, I earned vauable practical experience for three semesters at IBM Canada and one at Clearview, which earned me a Co-op Designation on my transcript. </p>
 				<p>After graduating, I started as a Technical Support Engineer at Guidewire Inc. Since then, I've transitioned to a Platform Support Engineer. Quick to learn and eager to develop my skills, I am open to trying out different roles.</p>
 			</div>
 		</div>
-		<WorkExperience/>
+
 		<div class="work-experience">
+			<WorkExperience/>
+		</div>
+		<div class="certs">
 			<h1>Certifications</h1>
 			<div class="workplace">
 				<Image class="workplace-img" src={pccertImage} alt="Guidewire Inc." width={200} height={226}></Image>
@@ -32,12 +70,22 @@ import WorkExperience from '../components/aboutme/WorkExperience.astro';
 					<h3>Professional Configuration Support</h3>
 				</div>
 			</div>
-				
 		</div>
 	</main>
 </Layout>
 
+
 <style>
+	.certs {
+		opacity: 0;
+		background-color: #384552;
+		border-radius: 25px;
+		display: flex;
+		align-items: center;
+		flex-direction: column;
+		margin-bottom: 5vw;
+		padding-top: 66px;
+	}
 	.workplace-img {
 		margin-right: 66px;
 		border-radius: 25px;
@@ -48,11 +96,14 @@ import WorkExperience from '../components/aboutme/WorkExperience.astro';
 		display: flex;
 		flex-direction: column;
 	}
-	#aboutme-intro {
+	.aboutme-img {
 		width: 40vw;
 		height: auto;
   		border-radius: 25px;
 		padding: 10px;
+	}
+	.to-fade {
+		opacity: 0;
 	}
 	.main-area {
 		display: flex;
@@ -66,6 +117,7 @@ import WorkExperience from '../components/aboutme/WorkExperience.astro';
 		padding: 10vw;
 	}
 	.work-experience {
+		opacity: 0;
 		background-color: #384552;
 		border-radius: 25px;
 		display: flex;

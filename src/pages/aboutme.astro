@@ -34,16 +34,16 @@ import WorkExperience from '../components/aboutme/WorkExperience.astro';
 			var flagCert = true
 
 			window.addEventListener("scroll", function() {
-			if(this.scrollY > 1000) {
-				if(flagWorkExp) {
-					fade(document.querySelectorAll('.work-experience'));
-					flagWorkExp = false;
-				}
-			}
-			else if(this.scrollY > 2200) {
+			if(this.scrollY > 2000) {
 				if(flagCert) {
 					fade(document.querySelectorAll('.certs'));
 					flagCert = false;
+				}
+			}
+			else if(this.scrollY > 1000) {
+				if(flagWorkExp) {
+					fade(document.querySelectorAll('.work-experience'));
+					flagWorkExp = false;
 				}
 			}
 			})

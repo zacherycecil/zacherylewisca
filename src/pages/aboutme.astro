@@ -12,16 +12,16 @@ import WorkExperience from '../components/aboutme/WorkExperience.astro';
 		<Header/>
 
 		<script>
-			fade(document.querySelectorAll('.to-fade'));
+			fadeIn(document.querySelectorAll<HTMLElement>('.to-fade'));
 
-			function fade(toFade) {
+			function fadeIn(toFade : NodeListOf<HTMLElement>) {
 				var op = 0;  // initial opacity
 				toFade.forEach((element) => {
 					var timer = setInterval(function () {
 						if (op >= 1){
 							clearInterval(timer);
 						}
-						element.style.opacity = op;
+						element.style.opacity = op.toString();
 						element.style.filter = 'alpha(opacity=' + op * 100 + ")";
 						op += 0.01;
 					}, 10);
@@ -34,13 +34,13 @@ import WorkExperience from '../components/aboutme/WorkExperience.astro';
 			window.addEventListener("scroll", function() {
 				if(this.scrollY > 2000) {
 					if(flagCert) {
-						fade(document.querySelectorAll('.certs'));
+						fadeIn(document.querySelectorAll('.certs'));
 						flagCert = false;
 					}
 				}
-				else if(this.scrollY > 1000) {
+				else if(this.scrollY > 600) {
 					if(flagWorkExp) {
-						fade(document.querySelectorAll('.work-experience'));
+						fadeIn(document.querySelectorAll('.work-experience'));
 						flagWorkExp = false;
 					}
 				}

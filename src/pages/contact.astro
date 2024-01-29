@@ -10,16 +10,16 @@ import myImage from "../../public/IMG_4951.jpg"
 	<main>
 		<Header/>
 		<script>
-			fade(document.querySelectorAll('.main-area'));
+			fadeIn(document.querySelectorAll<HTMLElement>('.main-area'));
 
-			function fade(toFade) {
+			function fadeIn(toFade : NodeListOf<HTMLElement>) {
 				var op = 0;  // initial opacity
 				toFade.forEach((element) => {
 					var timer = setInterval(function () {
 						if (op >= 1){
 							clearInterval(timer);
 						}
-						element.style.opacity = op;
+						element.style.opacity = op.toString();
 						element.style.filter = 'alpha(opacity=' + op * 100 + ")";
 						op += 0.01;
 					}, 10);
